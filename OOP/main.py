@@ -1,15 +1,18 @@
-from enemy import *
+from ogre import *
+from zombie import *
 
-zombie = Enemy(
-    type_of_enemy="zombie",
-    health_points=100,
+zombie = Zombie(
+    health_points=50,
     attack_damage=9
 )
 
-yeti = Enemy(
-    type_of_enemy="yeti",
-    health_points=100,
-    attack_damage=10
+ogre = Ogre(
+    health_points=75,
+    attack_damage=12
 )
 
-print(zombie.get_type_of_enemy())
+print(f'{zombie.get_type_of_enemy()} has {zombie.health_points} health points and {zombie.attack_damage} attack damage')
+print(f'{ogre.get_type_of_enemy()} has {ogre.health_points} health points and {ogre.attack_damage} attack damage')
+
+zombie.talk()
+ogre.talk()
