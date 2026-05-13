@@ -1,5 +1,12 @@
+from enemy import *
 from ogre import *
 from zombie import *
+
+
+def battle(e: Enemy):
+    e.talk()
+    e.attack()
+
 
 zombie = Zombie(
     health_points=50,
@@ -11,8 +18,5 @@ ogre = Ogre(
     attack_damage=12
 )
 
-print(f'{zombie.get_type_of_enemy()} has {zombie.health_points} health points and {zombie.attack_damage} attack damage')
-print(f'{ogre.get_type_of_enemy()} has {ogre.health_points} health points and {ogre.attack_damage} attack damage')
-
-zombie.talk()
-ogre.talk()
+battle(zombie)
+battle(ogre)
